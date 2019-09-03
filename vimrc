@@ -33,15 +33,19 @@ nnoremap <f2> :let _s=@/<Bar>:%s/\s\+$//e<Bar> :let @/=_s<Bar><CR>
 " Highlight matching braces
 set showmatch
 
+" Vim Plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+	echo "Installing VimPlug..."
+	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	autocmd VimEnter * PlugInstall
+endif
+
+call plug#begin('~/.vim/plugged')
+Plug 'pbondoer/vim-42header'
+call plug#end()
 
 " 42 Header
-nmap <f1> :FortyTwoHeader<CR>
-filetype plugin indent off
-if empty(glob('~/.vim/autoload/plug.vim'))
-    echo "Installing VimPlug..."
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall
-endif
-call plug#begin('~/.vim/plugged')
-Plug 'pandark/42header.vim'
-call plug#end()
+" nmap <f1> :Stdheader<CR>
+
+" re-set
+set showcmd
