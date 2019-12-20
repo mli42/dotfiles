@@ -2,15 +2,13 @@ syntax on
 set nu
 set mouse=a
 set noswapfile
+
 set tabstop=4
 set shiftwidth=4
-set ruler
-set showcmd
 
-" Uses indentation of previous line
 set autoindent
-" Uses intelligent indentation for C
 set smartindent
+set cindent
 
 " Sets UTF-8 encoding
 set enc=utf-8
@@ -22,6 +20,7 @@ set nocompatible
 
 " Sets a ruler at line 80
 set colorcolumn=80
+colorscheme slate
 " Change the ruler color, colors range from 0 (black) to 250 (white)
 highlight ColorColumn ctermbg=240
 
@@ -29,9 +28,6 @@ highlight ColorColumn ctermbg=240
 " If you want to understand how it works, read this:
 " http://vi.stackexchange.com/a/2285
 nnoremap <f2> :let _s=@/<Bar>:%s/\s\+$//e<Bar> :let @/=_s<Bar><CR>
-
-" Highlight matching braces
-set showmatch
 
 " Vim Plug
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -47,5 +43,6 @@ call plug#end()
 " 42 Header
 " nmap <f1> :Stdheader<CR>
 
-" re-set
+set showmatch
 set showcmd
+set ruler
