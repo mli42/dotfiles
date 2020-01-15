@@ -25,5 +25,7 @@ export PATH=${BREW_PATH}:${PATH}
 export MINICONDA_PATH=~/miniconda3/bin
 export PATH=${MINICONDA_PATH}:${PATH}
 
+export PATH=${HOME}/my_bin:${PATH}
+
 # gogo_gadget_cub3D
 gogo_gadget_bootcamp_py
