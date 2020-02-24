@@ -70,3 +70,6 @@ call plug#end()
 set showmatch
 set showcmd
 set ruler
+
+set cursorline " cursorcolumn
+hi CursorLine term=bold guibg=Grey40 cterm=underline,bold
