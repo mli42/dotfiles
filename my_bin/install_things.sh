@@ -6,7 +6,7 @@
 #    By: mli <mli@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/09 17:45:28 by mli               #+#    #+#              #
-#    Updated: 2020/05/09 18:32:03 by mli              ###   ########.fr        #
+#    Updated: 2020/05/09 19:18:06 by mli              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,19 @@ function set_conda {
 	fi
 }
 
+function gitig_init () {
+	echo "Creating .gitignore"
+	echo ".gitignore" >> .gitignore
+	echo "a.out" >> .gitignore
+	echo "*.o" >> .gitignore
+	echo "*.a" >> .gitignore
+	echo ".vscode" >> .gitignore
+	echo ".idea" >> .gitignore
+	echo "CMake*" >> .gitignore
+}
+
 function vesk {
-	read input
-	echo "This is your input : [$input] !"
+	echo -n "It's tough to read...: "
+	read  abc
+	echo "This is your input : [$abc] !"
 }

@@ -7,6 +7,7 @@ alias gogo_gadget_compile_db="gcc -Wall -Werror -Wextra -fsanitize=address -g3"
 alias mzsh="vim ~/dotfiles/zshrc"
 alias mvim="vim ~/dotfiles/vimrc"
 alias mdot="cd ~/dotfiles && here"
+alias mbin="cd ~/dotfiles/my_bin && here"
 
 alias gogo_gadget_desk="cd ~/Desktop && here"
 alias gogo_gadget_projects="cd ~/Desktop/Projects/ && here"
