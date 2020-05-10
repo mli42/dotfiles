@@ -6,8 +6,8 @@ filetype off      " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'ycm-core/YouCompleteMe'
+" Plugin 'VundleVim/Vundle.vim' " For Vundle itself
+" Plugin 'ycm-core/YouCompleteMe'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -61,15 +61,136 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+
+Plug 'ycm-core/YouCompleteMe' " Compatibility issues with syntastic
+Plug 'vim-syntastic/syntastic'
+" Plug 'davidhalter/jedi-vim' " Python Autocompletion
+Plug 'scrooloose/nerdtree'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ryanoasis/vim-devicons'
+Plug 'Lenovsky/nuake' " Open a Terminal
+" Plug 'pandark/42header.vim'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'itchyny/lightline.vim'
+" Plug 'brookhong/cscope.vim' " IDK
+Plug 'sheerun/vim-polyglot'
+Plug 'scrooloose/nerdcommenter'
+Plug 'mbbill/undotree'
+Plug 'terryma/vim-multiple-cursors'
+" Plug 'thaerkh/vim-workspace'
+Plug 'drewtempelmeyer/palenight.vim'
+" Plug 'arcticicestudio/nord-vim'
+" Plug 'mattn/emmet-vim'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'elixir-editors/vim-elixir'
+Plug 'mhinz/vim-mix-format'
+Plug 'edkolev/tmuxline.vim'
+" Plug 'rbgrouleff/bclose.vim'
+" Plug 'francoiscabrol/ranger.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'jparise/vim-graphql'
+" Plug 'mxw/vim-jsx'
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'ctrlpvim/ctrlp.vim'
+Plug 'rizzatti/dash.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'vim-scripts/Align'
+
 Plug 'pbondoer/vim-42header'
 call plug#end()
 
+"-------------------------------- SYNTASTIC ------------------------------------
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+
+let g:syntastic_loc_list_height = 10
+let g:syntastic_error_symbol = '✖'
+let g:syntastic_style_error_symbol = '✖'
+let g:syntastic_warning_symbol = '!'
+let g:syntastic_style_warning_symbol = '!'
+let g:syntastic_enable_highlighting = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_c_include_dirs = ['includes', 'libft/includes', '../includes', '../libft/includes', './libft']
+
+"-------------------------------- NerdTreeToggle--------------------------------
+nmap <C-a> :NERDTreeToggle<CR>
+" Open a NERDTree automatically when vim starts up
+" autocmd vimenter * NERDTree
+" Close if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Automatic when no files specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+"-------------------------------- NUAKE ----------------------------------------
+nnoremap <F4> :Nuake<CR>
+inoremap <F4> <C-\><C-n>:Nuake<CR>
+tnoremap <F4> <C-\><C-n>:Nuake<CR>
+
+"-------------------------------- LightLine ------------------------------------
+set laststatus=2
+set noshowmode
+let g:lightline = {'colorscheme': 'seoul256'}
+
+"-------------------------------- NERDCommenter --------------------------------
+let g:NERDSpaceDelims = 1
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
+"-------------------------------------------------------------------------------
 " 42 Header
 " nmap <f1> :Stdheader<CR>
+" <F2> => No WhiteSpaces
+
+" <F4> => Nuake
+nnoremap <F5> :UndotreeToggle<CR>
 
 set showmatch
 set showcmd
 set ruler
 
+set background=dark
+colorscheme palenight
+let g:palenight_terminal_italics=1
+
 set cursorline " cursorcolumn
 hi CursorLine term=bold guibg=Grey40 cterm=underline,bold
+
+"-------------------------------- MISC -----------------------------------------
+noremap ' ci'
+noremap " ci"
+noremap ( ci(
+noremap [ ci[
+noremap { ci{
+
+function! VsRight()
+	set splitright
+	exec "vs"
+endfunction
+
+function! VsLeft()
+	set splitright!
+	exec "vs"
+	set splitright
+endfunction
+
+function! SpUp()
+	set splitbelow!
+	exec "sp"
+	set splitbelow
+endfunction
+
+function! SpDown()
+	set splitbelow
+	exec "sp"
+endfunction
+
+iabbrev mainc int		main(int argc, char **argv)<cr>{<cr>
+nnoremap <leader><Right> :call VsRight()<CR>
+nnoremap <leader><Left> :call VsLeft()<CR>
+nnoremap <leader><Up> :call SpUp()<CR>
+nnoremap <leader><Down> :call SpDown()<CR>
