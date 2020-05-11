@@ -1,0 +1,5 @@
+alias stae='state'
+alias staet='state'
+alias staett='state'
+alias sttae='state'
+alias staete='state'

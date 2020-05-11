@@ -34,5 +34,6 @@ source ~/42toolbox/shell_utils.sh
 source ~/dotfiles/my_bin/install_things.sh
 
 source ~/dotfiles/.config/alias_gadget.zsh
+source ~/dotfiles/.config/misswritten.zsh
 
 function cd() { builtin cd "$*" && ls; }
