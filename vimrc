@@ -116,6 +116,11 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_c_include_dirs = ['includes', 'libft/includes', '../includes', '../libft/includes', './libft']
 
+"-------------------------------- YCM ------------------------------------------
+let g:ycm_error_symbol = '✖'
+let g:ycm_warning_symbol = '!'
+let g:ycm_global_ycm_extra_conf = '~/dotfiles/.config/.ycm_extra_conf.py'
+
 "-------------------------------- NerdTreeToggle--------------------------------
 nmap <C-a> :NERDTreeToggle<CR>
 " Open a NERDTree automatically when vim starts up
@@ -189,7 +194,7 @@ function! SpDown()
 	exec "sp"
 endfunction
 
-iabbrev mainc int		main(int argc, char **argv)<cr>{<cr>
+iabbrev mainc int		main(int argc, char **argv)<cr>{<cr>(void)argc; (void)argv;
 nnoremap <leader><Right> :call VsRight()<CR>
 nnoremap <leader><Left> :call VsLeft()<CR>
 nnoremap <leader><Up> :call SpUp()<CR>

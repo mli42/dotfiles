@@ -1,0 +1,22 @@
+alias gogo_gadget_desk="cd ~/Desktop && here"
+alias gogo_gadget_projects="cd ~/Desktop/Projects/ && here"
+alias gogo_gadget_fac="cd ~/Desktop/Projects/Python_Fac && here"
+alias gogo_gadget_working_on="cd ~/Desktop/Projects/working_on && here"
+alias thp="cd ~/Desktop/Projects/THP && here"
+alias gogo_gadget_libft="cd ~/Desktop/Projects/cub3D/libft && here"
+alias gogo_gadget_gnl="cd ~/Desktop/Projects/cub3D/libft/GNL && here"
+alias gogo_gadget_printf="cd ~/Desktop/Projects/cub3D/libft/ft_printf && here"
+alias gogo_gadget_cub3D="cd ~/Desktop/Projects/cub3D && here"
+alias gogo_gadget_bootcamp_py="cd ~/Desktop/Projects/bootcamp_py && here"
+alias gogo_gadget_server="cd ~/Desktop/Projects/ft_server && here"
+alias gogo_gadget_exams="cd ~/Desktop/Projects/exams/03 && here"
+alias gogo_gadget_asm="cd ~/Desktop/Projects/libasm && here"
+alias gogo_gadget_minishell="cd ~/Desktop/Projects/charmstr && here"
+alias gogo_gadget_akante="cd ~/Desktop/Projects/Akante && here"
+alias here="clear && pwd && ls && chaton"
+alias chaton="Anais"
+
+alias doruby="cd ~/Desktop/Projects/THP_rendu/semaine_02/jour_01 && here"
+alias dobot="cd ~/Desktop/Projects/MeandreBot && here"
+
+gogo_gadget_minishell
