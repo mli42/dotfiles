@@ -194,7 +194,7 @@ function! SpDown()
 	exec "sp"
 endfunction
 
-iabbrev mainc int		main(int argc, char **argv)<cr>{<cr>(void)argc; (void)argv;
+iabbrev mainc int		main(int argc, char **argv)<CR>{<CR>(void)argc; (void)argv;<CR>}<ESC>O
 nnoremap <leader><Right> :call VsRight()<CR>
 nnoremap <leader><Left> :call VsLeft()<CR>
 nnoremap <leader><Up> :call SpUp()<CR>
