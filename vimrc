@@ -120,6 +120,7 @@ let g:syntastic_c_include_dirs = ['includes', 'libft/includes', '../includes', '
 let g:ycm_error_symbol = '✖'
 let g:ycm_warning_symbol = '!'
 let g:ycm_global_ycm_extra_conf = '~/dotfiles/.config/.ycm_extra_conf.py'
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 "-------------------------------- NerdTreeToggle--------------------------------
 nmap <C-a> :NERDTreeToggle<CR>
@@ -143,6 +144,8 @@ let g:lightline = {'colorscheme': 'seoul256'}
 
 "-------------------------------- NERDCommenter --------------------------------
 let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDDefaultAlign = 'left'
 let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
