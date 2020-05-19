@@ -95,6 +95,7 @@ Plug 'jparise/vim-graphql'
 Plug 'rizzatti/dash.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'vim-scripts/Align'
+Plug 'kien/rainbow_parentheses.vim'
 
 Plug 'pbondoer/vim-42header'
 call plug#end()
@@ -149,6 +150,19 @@ let g:NERDDefaultAlign = 'left'
 let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
+
+"-------------------------------- Rainbow Parentheses --------------------------
+let g:rbpt_colorpairs = [
+	\ ['brown',			'RoyalBlue3'],
+	\ ['blue',			'DarkOrchid3'],
+	\ ['darkgreen',		'RoyalBlue3'],
+	\ ['darkcyan',		'RoyalBlue3'],
+	\ ['darkred',		'SeaGreen3'],
+	\ ]
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 "-------------------------------------------------------------------------------
 " 42 Header
 " nmap <f1> :Stdheader<CR>
