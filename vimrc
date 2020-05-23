@@ -186,8 +186,6 @@ hi CursorLine term=bold guibg=Grey40 cterm=underline,bold
 noremap ' ci'
 noremap " ci"
 noremap ( ci(
-noremap [ ci[
-noremap { ci{
 
 function! VsRight()
 	set splitright
