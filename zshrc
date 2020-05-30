@@ -12,6 +12,8 @@ alias mbin="cd ~/dotfiles/my_bin && here"
 
 alias srcs="source ~/.zshrc"
 alias state="git status"
+unalias gst
+alias gst="git stash"
 alias gitpush="git push && git push GH"
 alias gitpush_home="git push && git push GL"
 alias nodstore="find . -type f -name '.DS_Store' -delete -print"
