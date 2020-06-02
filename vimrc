@@ -214,3 +214,6 @@ nnoremap <leader><Right> :call VsRight()<CR>
 nnoremap <leader><Left> :call VsLeft()<CR>
 nnoremap <leader><Up> :call SpUp()<CR>
 nnoremap <leader><Down> :call SpDown()<CR>
+
+iabbrev inc" #include " .h"<ESC>3hc
+iabbrev inc< #include < .h><ESC>3hc
