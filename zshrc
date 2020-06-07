@@ -21,8 +21,8 @@ alias nodstore="find . -type f -name '.DS_Store' -delete -print"
 export BREW_PATH=${HOME}/.brew/bin
 export PATH=${BREW_PATH}:${PATH}
 
-export MINICONDA_PATH=${HOME}/miniconda3/bin
-export PATH=${MINICONDA_PATH}:${PATH}
+# export MINICONDA_PATH=${HOME}/miniconda3/bin
+# export PATH=${MINICONDA_PATH}:${PATH}
 
 export PATH=${PATH}:${HOME}/dotfiles/my_bin
 

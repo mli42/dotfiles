@@ -115,7 +115,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_c_include_dirs = ['includes', 'libft/includes', '../includes', '../libft/includes', './libft']
+let g:syntastic_c_include_dirs = ['includes', 'libft/includes', '../includes', '../libft/includes', './libft', '../']
 
 "-------------------------------- YCM ------------------------------------------
 let g:ycm_error_symbol = '✖'
@@ -147,7 +147,7 @@ let g:lightline = {'colorscheme': 'seoul256'}
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
 let g:NERDDefaultAlign = 'left'
-let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**', 'right': '*/' } }
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 
@@ -217,3 +217,4 @@ nnoremap <leader><Down> :call SpDown()<CR>
 
 iabbrev inc" #include " .h"<ESC>3hc
 iabbrev inc< #include < .h><ESC>3hc
+iabbrev def# # define
