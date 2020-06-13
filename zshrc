@@ -59,3 +59,5 @@ function ft_valgrind() {
 	done
 }
 alias valgrind="ft_valgrind"
+
+function lfor () { grep -rn "$*" . || echo "Nothing found for '$*'." }
