@@ -593,3 +593,21 @@
    fun:environ_init
    fun:_os_object_init
 }
+
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:malloc_zone_calloc
+   fun:_ZL11freeBucketsP11NXHashTablei
+   fun:_ZL10remapClassP10objc_class
+   fun:_ZN10TimeLogger3logEPKc
+   fun:NXHashGet
+   fun:NXCreateHashTableFromZone
+   fun:NXMapRemove
+   fun:_unload_image
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+}

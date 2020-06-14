@@ -52,7 +52,7 @@ function ft_valgrind() {
 				echo -e "\e[0;91m/!\\ Compiled with -fsanitize.\e[0m"
 			else
 				command valgrind --suppressions=${MY_CONFIG}/basics.supp \
-				--suppressions=${MY_CONFIG}/valgrind.supp $*
+				--suppressions=${MY_CONFIG}/valgrind_minishell.supp $*
 			fi
 			break
 		fi
