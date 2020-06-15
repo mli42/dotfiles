@@ -6,12 +6,16 @@
 #    By: mli <mli@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/09 17:45:28 by mli               #+#    #+#              #
-#    Updated: 2020/05/09 19:18:06 by mli              ###   ########.fr        #
+#    Updated: 2020/06/12 18:01:36 by mli              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 function install_42toolbox () {
 	git clone https://github.com/alexandregv/42toolbox.git ~/
+}
+
+function install_valgrind () {
+	brew install --HEAD https://raw.githubusercontent.com/sowson/valgrind/master/valgrind.rb
 }
 
 # python -V ==> 3.7
