@@ -16,6 +16,7 @@ alias mbin="cd ${MY_BIN} && here"
 
 alias srcs="source ~/.zshrc"
 alias state="git status"
+alias gstt="git status"
 unalias gst
 alias gst="git stash"
 alias gitpush="git push && git push GH"
