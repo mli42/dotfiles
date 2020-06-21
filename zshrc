@@ -14,6 +14,7 @@ alias mvim="vim ${DOTFILES}/vimrc"
 alias mdot="cd ${DOTFILES} && here"
 alias mbin="cd ${MY_BIN} && here"
 
+alias vi="vim"
 alias srcs="source ~/.zshrc"
 alias state="git status"
 alias gstt="git status"
@@ -23,16 +24,19 @@ alias gitpush="git push && git push GH"
 alias gitpush_home="git push && git push GL"
 alias nodstore="find . -type f -name '.DS_Store' -delete -print"
 
-export BREW_PATH=${HOME}/.brew/bin
-export PATH=${BREW_PATH}:${PATH}
-
-# export MINICONDA_PATH=${HOME}/miniconda3/bin
-# export PATH=${MINICONDA_PATH}:${PATH}
-
-export PATH=${PATH}:${MY_BIN}
+at42=false
+if [ $at42 = true ]; then
+	source ${DOTFILES}/at42.zsh
+else
+	source ${DOTFILES}/athome.zsh
+fi
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+export BREW_PATH=${GOINFRE}/.brew/bin
+#export MINICONDA_PATH=${GOINFRE}/miniconda3/bin
+#export RVM_PATH=$GOINFRE/.rvm/bin
+
+export PATH=${BREW_PATH}:${MINICONDA_PATH}:${PATH}:${RVM_PATH}:${MY_BIN}
 
 export PS1="🐈 ${PS1}"
 export PS2="🤡 ${PS2}"
@@ -43,22 +47,4 @@ source ${MY_BIN}/install_things.sh
 source ${MY_CONFIG}/alias_gadget.zsh
 source ${MY_CONFIG}/misswritten.zsh
 
-function cd() { builtin cd "$*" && ls; }
-
-function ft_valgrind() {
-	for i in "$@"; do
-		if [[ $i == ./* ]]; then
-			cmd=$(nm -an $i | grep asan)
-			if [[ $? == 0 ]]; then
-				echo -e "\e[0;91m/!\\ Compiled with -fsanitize.\e[0m"
-			else
-				command valgrind --suppressions=${MY_CONFIG}/basics.supp \
-				--suppressions=${MY_CONFIG}/valgrind_minishell.supp $*
-			fi
-			break
-		fi
-	done
-}
-alias valgrind="ft_valgrind"
-
-function lfor () { grep -rn "$*" . || echo "Nothing found for '$*'." }
+source ${DOTFILES}/custom_function.zsh
