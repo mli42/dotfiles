@@ -62,7 +62,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'ycm-core/YouCompleteMe' " Compatibility issues with syntastic
+" Plug 'ycm-core/YouCompleteMe' " Compatibility issues with syntastic
 Plug 'vim-syntastic/syntastic'
 " Plug 'davidhalter/jedi-vim' " Python Autocompletion
 Plug 'scrooloose/nerdtree'
@@ -98,6 +98,8 @@ Plug 'vim-scripts/Align'
 Plug 'kien/rainbow_parentheses.vim'
 
 Plug 'pbondoer/vim-42header'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Use release branch (recommend)
 call plug#end()
 
 "-------------------------------- SYNTASTIC ------------------------------------
@@ -117,6 +119,10 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_c_include_dirs = ['includes', 'libft/includes', '../includes', '../libft/includes', './libft', '../']
 
+"-------------------------------- COC ------------------------------------------
+" Install nodejs >= 10.12: https://nodejs.org/en/download/
+" Then :CocInstall coc-json coc-tsserver
+source ${MY_CONFIG}/coc.vim
 "-------------------------------- YCM ------------------------------------------
 let g:ycm_error_symbol = '✖'
 let g:ycm_warning_symbol = '!'
