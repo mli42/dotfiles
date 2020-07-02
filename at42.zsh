@@ -1,1 +1,1 @@
-export GOINFRE=
+export GOINFRE=${HOME}
