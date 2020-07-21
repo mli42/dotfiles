@@ -13,10 +13,12 @@ alias gogo_gadget_exams="cd ~/Desktop/Projects/exams/03 && here"
 alias gogo_gadget_asm="cd ~/Desktop/Projects/libasm && here"
 alias gogo_gadget_minishell="cd ~/Desktop/Projects/charmstr && here"
 alias gogo_gadget_akante="cd ~/Desktop/Projects/Akante && here"
+alias gogo_gadget_services="cd ~/Desktop/Projects/ft_services && here"
+alias gogo_gadget_cpp="cd ~/Desktop/Projects/cpp-piscine && here"
 alias here="clear && pwd && ls && chaton"
 alias chaton="Anais"
 
 alias doruby="cd ~/Desktop/Projects/THP_rendu/semaine_02/jour_01 && here"
 alias dobot="cd ~/Desktop/Projects/MeandreBot && here"
 
-gogo_gadget_minishell
+gogo_gadget_cpp

@@ -17,3 +17,10 @@ function ft_valgrind() {
 alias valgrind="ft_valgrind"
 
 function lfor () { grep -rn "$*" . || echo "Nothing found for '$*'." }
+
+function scurl () {
+	if [ -z "$2" ]; then
+		2=$(echo "$1" | rev | cut -d '/' -f1 | rev)
+	fi
+	curl --output $2 $1
+}
