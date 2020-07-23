@@ -22,8 +22,8 @@ cpp_file=${1}.cpp
 end="${upper}_CLASS_H end"
 
 if [ "$2" != "cpp" ]; then
-printf >>$hpp_file "
-#ifndef ${upper}_CLASS_H
+printf >>$hpp_file \
+"#ifndef ${upper}_CLASS_H
 # define ${upper}_CLASS_H
 
 class $1 {
@@ -36,8 +36,8 @@ class $1 {
 fi
 
 if [ "$2" != "hpp" ]; then
-printf >>$cpp_file "
-#include <iostream>
+printf >>$cpp_file \
+"#include <iostream>
 #include \"$hpp_file\"
 
 $1::$1(void) {
