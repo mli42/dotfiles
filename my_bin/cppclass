@@ -1,0 +1,50 @@
+#!/bin/zsh
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    cppclass                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mli <mli@student.42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/07/23 21:53:24 by mli               #+#    #+#              #
+#    Updated: 2020/07/23 21:56:41 by mli              ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+if [ -z "$1" ]; then
+	echo "Need at least one param... Aka class_name (+ {cpp/hpp} if need only one)"; exit;
+fi
+
+stars="************************************************************************"
+upper=$(echo "$1" | awk '{ print toupper($0) }')
+hpp_file=${1}.hpp
+cpp_file=${1}.cpp
+end="${upper}_CLASS_H end"
+
+if [ "$2" != "cpp" ]; then
+printf >>$hpp_file "
+#ifndef ${upper}_CLASS_H
+# define ${upper}_CLASS_H
+
+class $1 {
+\tpublic:
+\t\t${1}(void);
+\t\t~${1}(void);
+\n\tprivate:\n};
+
+#endif // %.*s %s //\n" $((66-${#end})) "$stars" "$end"
+fi
+
+if [ "$2" != "hpp" ]; then
+printf >>$cpp_file "
+#include <iostream>
+#include \"$hpp_file\"
+
+$1::$1(void) {
+\treturn ;
+}
+
+$1::~$1(void) {
+\treturn ;
+}\n"
+fi
