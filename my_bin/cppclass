@@ -16,15 +16,15 @@ if [ -z "$1" ]; then
 fi
 
 stars="************************************************************************"
-upper=$(echo "$1" | awk '{ print toupper($0) }')
+uppercase=$(echo "$1" | awk '{ print toupper($0) }')
 hpp_file=${1}.hpp
 cpp_file=${1}.cpp
-end="${upper}_CLASS_H end"
+protection="${uppercase}_CLASS_HPP"
 
 if [ "$2" != "cpp" ]; then
 printf >>$hpp_file \
-"#ifndef ${upper}_CLASS_H
-# define ${upper}_CLASS_H
+"#ifndef ${protection}
+# define ${protection}
 
 class $1 {
 \tpublic:
@@ -32,7 +32,7 @@ class $1 {
 \t\t~${1}(void);
 \n\tprivate:\n};
 
-#endif // %.*s %s //\n" $((66-${#end})) "$stars" "$end"
+#endif // %.*s ${protection} end //\n" $((80 - 18 - ${#protection})) "$stars"
 fi
 
 if [ "$2" != "hpp" ]; then
