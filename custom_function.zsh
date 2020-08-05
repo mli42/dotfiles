@@ -24,3 +24,7 @@ function scurl () {
 	fi
 	curl --output $2 $1
 }
+
+function gpp () {
+	clang++ -Wall -Wextra -Werror $*
+}
