@@ -28,3 +28,12 @@ function scurl () {
 function gpp () {
 	clang++ -Wall -Wextra -Werror $*
 }
+
+function decorateandplay () {
+	echo "\t\t\e[1;93m####\e[m \e[1;94m$*\e[m \e[1;93m####\e[0m" && eval "$*"
+}
+
+function seeplace () {
+	decorateandplay "df -h"
+	decorateandplay "du -hd1 2>/dev/null ~ | sort -h"
+}
