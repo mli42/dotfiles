@@ -64,7 +64,7 @@ call plug#begin('~/.vim/plugged')
 
 if !$at42
 	Plug 'ycm-core/YouCompleteMe' " Compatibility issues with syntastic
-elseif
+else
 	Plug 'neoclide/coc.nvim', {'branch': 'release'} " Use release branch
 endif
 

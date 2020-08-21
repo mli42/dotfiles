@@ -6,7 +6,7 @@
 #    By: mli <mli@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/09 17:45:28 by mli               #+#    #+#              #
-#    Updated: 2020/06/12 18:01:36 by mli              ###   ########.fr        #
+#    Updated: 2020/08/21 14:47:07 by mli              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,4 +68,23 @@ function vesk {
 	echo -n "It's tough to read...: "
 	read  abc
 	echo "This is your input : [$abc] !"
+}
+
+function install_brew () {
+	# Install BREW 🍺
+	if ! which brew &>/dev/null; then
+		echo "\t\t\e[1;93mInstall BREW 🍺...\e[0m"
+		rm -rf $HOME/.brew &&
+		git clone --depth=1 https://github.com/Homebrew/brew $HOME/.brew &&
+		echo 'export PATH=$HOME/.brew/bin:$PATH' >> $HOME/.zshrc &&
+		source $HOME/.zshrc && brew update
+	fi
+
+	if ! which watch &>/dev/null; then
+		brew install watch
+	fi
+
+	if ! which nodejs &>/dev/null; then
+		brew install nodejs
+	fi
 }

@@ -24,9 +24,9 @@ alias gitpush="git push && git push GH"
 alias gitpush_home="git push && git push GL"
 alias nodstore="find . -type f -name '.DS_Store' -delete -print"
 
-at42=false
+export at42=0
 if [ -d /sgoinfre ]; then
-	at42=true
+	at42=1
 	source ${DOTFILES}/at42.zsh
 else
 	source ${DOTFILES}/athome.zsh
