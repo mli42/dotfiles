@@ -227,6 +227,19 @@ nnoremap <leader><Left> :call VsLeft()<CR>
 nnoremap <leader><Up> :call SpUp()<CR>
 nnoremap <leader><Down> :call SpDown()<CR>
 
-iabbrev inc" #include " .h"<ESC>3hc
-iabbrev inc< #include < .h><ESC>3hc
+let file_extension=expand('%:e')
+if (file_extension == 'c')
+	iabbrev inc" #include " .h"<ESC>3hc
+	iabbrev inc< #include < .h><ESC>3hc
+elseif (file_extension == 'h')
+	iabbrev inc" # include " .h"<ESC>3hc
+	iabbrev inc< # include < .h><ESC>3hc
+elseif (file_extension == 'cpp')
+	iabbrev inc" #include " .hpp"<ESC>5hc
+	iabbrev inc< #include < ><ESC>1hc
+elseif (file_extension == 'hpp')
+	iabbrev inc" # include " .hpp"<ESC>5hc
+	iabbrev inc< # include < ><ESC>1hc
+endif
+
 iabbrev def# # define

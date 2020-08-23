@@ -26,6 +26,9 @@ printf >>$hpp_file \
 "#ifndef ${protection}
 # define ${protection}
 
+# include <iostream>
+# include <string>
+
 class $1 {
 \tpublic:
 \t\t${1}(void);
@@ -37,8 +40,7 @@ fi
 
 if [ "$2" != "hpp" ]; then
 printf >>$cpp_file \
-"#include <iostream>
-#include \"$hpp_file\"
+"#include \"$hpp_file\"
 
 $1::$1(void) {
 \treturn ;
