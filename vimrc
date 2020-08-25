@@ -73,7 +73,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'scrooloose/nerdtree'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
-Plug 'Lenovsky/nuake' " Open a Terminal
+" Plug 'Lenovsky/nuake' " Open a Terminal
 " Plug 'pandark/42header.vim'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'itchyny/lightline.vim'

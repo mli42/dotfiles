@@ -1,0 +1,77 @@
+#!/bin/zsh
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    cppclassc                                          :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mli <mli@student.42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/07/23 21:53:24 by mli               #+#    #+#              #
+#    Updated: 2020/08/25 11:36:38 by mli              ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+#
+# # # Canonical form
+
+if [ -z "$1" ]; then
+	echo "Need at least one param... Aka class_name (+ {cpp/hpp} if need only one)"; exit;
+fi
+
+stars="************************************************************************"
+uppercase=$(echo "$1" | awk '{ print toupper($0) }')
+hpp_file=${1}.hpp
+cpp_file=${1}.cpp
+protection="${uppercase}_CLASS_HPP"
+
+if [ "$2" != "cpp" ]; then
+printf >>$hpp_file \
+"#ifndef ${protection}
+# define ${protection}
+
+# include <iostream>
+# include <string>
+
+class $1 {
+\tpublic:
+\t\t${1}(void);
+\t\t${1}(${1} const &src);
+\t\t~${1}(void);
+
+\t\t${1}\t&operator=(${1} const &rhs);
+\n\tprivate:\n};
+
+std::ostream\t&operator<<(std::ostream &o, ${1} const & i);
+
+#endif // %.*s ${protection} end //\n" $((80 - 18 - ${#protection})) "$stars"
+fi
+
+if [ "$2" != "hpp" ]; then
+printf >>$cpp_file \
+"#include \"$hpp_file\"
+
+$1::$1(void) {
+\treturn ;
+}
+
+$1::$1($1 const &src) {
+	*this = src;
+}
+
+$1::~$1(void) {
+\treturn ;
+}
+
+$1\t&$1::operator=($1 const &rhs) {
+\tif (this != &rhs)
+\t{
+\t}
+\treturn (*this);
+}
+
+std::ostream\t&operator<<(std::ostream &o, $1 const &i) {
+\t(void)i;
+//\to << i.;
+\treturn (o);
+}
+"
+fi

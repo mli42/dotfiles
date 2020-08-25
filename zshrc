@@ -5,8 +5,8 @@ export DOTFILES=${HOME}/dotfiles
 export MY_CONFIG=${DOTFILES}/.config
 export MY_BIN=${DOTFILES}/my_bin
 
-alias gogo_gadget_compile="gcc -Wall -Werror -Wextra"
-alias gogo_gadget_compile_db="gcc -Wall -Werror -Wextra -fsanitize=address -g3"
+alias gccw="gcc -Wall -Werror -Wextra"
+alias gccwsa="gcc -Wall -Werror -Wextra -fsanitize=address -g3"
 
 alias mzsh="vim ${DOTFILES}/zshrc"
 alias mzsh2="vim ${MY_CONFIG}/alias_gadget.zsh"
