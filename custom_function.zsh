@@ -1,4 +1,4 @@
-function cd() { builtin cd $* && if [ $1 != '-' ]; then pwd; fi && ls; }
+function cd() { builtin cd $* && if [ "$1" != '-' ]; then pwd; fi && ls; }
 
 function ft_valgrind() {
 	for i in "$@"; do
