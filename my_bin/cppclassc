@@ -62,9 +62,8 @@ $1::~$1(void) {
 }
 
 $1\t&$1::operator=($1 const &rhs) {
-\tif (this != &rhs)
-\t{
-\t}
+\tif (this == &rhs)
+\t\treturn (*this);
 \treturn (*this);
 }
 
