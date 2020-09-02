@@ -37,3 +37,8 @@ function seeplace () {
 	decorateandplay "df -h"
 	decorateandplay "du -hd1 2>/dev/null ~ | sort -h"
 }
+
+function gundo () {
+	if [ -z "$1" ]; then 1="."; fi
+	git checkout -- $*
+}
