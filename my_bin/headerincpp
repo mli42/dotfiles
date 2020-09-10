@@ -18,7 +18,7 @@ for pathtest in $(ls); do
 	done
 done
 
-if [ "$1" == "vim" ]; then
+if [ "$1" = "vim" ]; then
 	for wrong in ${wrongs[@]}; do
 		vim $wrong
 	done
