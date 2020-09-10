@@ -1,15 +1,25 @@
+#!/usr/bin/env zsh
+
+wrongs=();
+
 for pathtest in $(ls); do
 	for file in $(ls $pathtest); do
 		extensionfile=$(echo $file | cut -d '.' -f 2)
-
 		if [ "$extensionfile" = "cpp" ] || [ "$extensionfile" = "hpp" ]; then
 			precisefile="$pathtest/$file"
 			cat $precisefile | head -n 1 | grep "/\* \*\*" &>/dev/null
 			if [ $? -eq 1 ]; then
 				printf "Header not in %-25s ❌\n" $precisefile
+				wrongs+=($precisefile)
 			else
 				printf "Header set in %-25s ✅\n" $precisefile
 			fi
 		fi
 	done
 done
+
+if [ "$1" == "vim" ]; then
+	for wrong in ${wrongs[@]}; do
+		vim $wrong
+	done
+fi
