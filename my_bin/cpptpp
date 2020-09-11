@@ -1,0 +1,70 @@
+#!/bin/zsh
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    cpptpp                                             :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mli <mli@student.42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/07/23 21:53:24 by mli               #+#    #+#              #
+#    Updated: 2020/09/11 15:23:17 by mli              ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+if [ -z "$1" ]; then
+	echo "Usage: <ClassName> <Template = T>"; exit;
+fi
+
+if [ -z "$2" ]; then
+	2="T";
+fi
+
+stars="************************************************************************"
+tpp_file="${1}.hpp"
+namespace="${1}<${2}>"
+uppercase=$(echo "$1" | awk '{ print toupper($0) }')
+protection="${uppercase}_CLASS_HPP"
+tppdef="template<typename ${2}>"
+
+printf >> $tpp_file \
+"#ifndef ${protection}
+# define ${protection}
+
+# include <iostream>
+# include <string>
+
+$tppdef
+class $1 {
+\tpublic:
+\t\t${1}(void);
+\t\t${1}(${1} const &src);
+\t\tvirtual ~${1}(void);
+
+\t\t${1}\t&operator=(${1} const &rhs);\n
+\tprotected:
+\tprivate:
+};
+
+$tppdef
+$namespace::$1(void) {
+\treturn ;
+}
+
+$tppdef
+$namespace::$1($1 const &src) {
+	*this = src;
+}
+
+$tppdef
+$namespace::~$1(void) {
+\treturn ;
+}
+
+$tppdef
+$namespace\t&$namespace::operator=($1 const &rhs) {
+\tif (this == &rhs)
+\t\treturn (*this);
+\treturn (*this);
+}
+
+#endif // %.*s ${protection} end //\n" $((80 - 18 - ${#protection})) "$stars"
