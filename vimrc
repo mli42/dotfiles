@@ -132,8 +132,13 @@ endif
 "-------------------------------- YCM ------------------------------------------
 let g:ycm_error_symbol = '✖'
 let g:ycm_warning_symbol = '!'
-let g:ycm_global_ycm_extra_conf = '~/dotfiles/.config/.ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_completion = 1
+let s:cfextension = expand('%:e')
+if (s:cfextension == "c" || s:cfextension == "h")
+	let g:ycm_global_ycm_extra_conf = '~/dotfiles/.config/.ycm_c.py'
+elseif (s:cfextension == "cpp" || s:cfextension == "hpp")
+	let g:ycm_global_ycm_extra_conf = '~/dotfiles/.config/.ycm_cpp.py'
+endif
 
 "-------------------------------- NerdTreeToggle--------------------------------
 nmap <C-a> :NERDTreeToggle<CR>
