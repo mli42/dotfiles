@@ -42,3 +42,9 @@ function gundo () {
 	if [ -z "$1" ]; then 1="."; fi
 	git checkout -- $*
 }
+
+function nodstore () {
+	if [ -z "$1" ]; then 1=".DS_Store"; fi
+	if [ -z "$2" ]; then 2="f"; fi
+	eval find . -type $2 -name '$1' -delete -print
+}

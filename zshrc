@@ -11,8 +11,8 @@ alias gccwsa="gcc -Wall -Werror -Wextra -fsanitize=address -g3"
 alias mzsh="vim ${DOTFILES}/zshrc"
 alias mzsh2="vim ${MY_CONFIG}/alias_gadget.zsh"
 alias mvim="vim ${DOTFILES}/vimrc"
-alias mdot="cd ${DOTFILES} && here"
-alias mbin="cd ${MY_BIN} && here"
+alias mdot="cd ${DOTFILES}"
+alias mbin="cd ${MY_BIN}"
 
 alias vi="vim"
 alias srcs="source ~/.zshrc"
@@ -22,7 +22,6 @@ unalias gst
 alias gst="git stash"
 alias gitpush="git push && git push GH"
 alias gitpush_home="git push && git push GL"
-alias nodstore="find . -type f -name '.DS_Store' -delete -print"
 
 export at42=0
 if [ -d /sgoinfre ]; then
