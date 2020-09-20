@@ -16,7 +16,26 @@ function ft_valgrind() {
 }
 alias valgrind="ft_valgrind"
 
-function lfor () { grep -rn "$*" . || echo "Nothing found for '$*'." }
+function lfor () {
+	argc=$#
+	search=""
+	vflag="--lfor=v"
+
+	for ((i=1; i <= argc; i++)); do
+		if [ "${(P)i}" = "$vflag" ]; then break ; fi
+		if [ $i -ne 1 ]; then search+=" "; fi
+		search+="${(P)i}";
+	done
+	todo="grep -rn \"$search\" ."
+	if [ "${(P)i}" = "$vflag" ]; then
+		((i++))
+		for ((; i <= $argc; i++)); do
+			todo+=" | grep -v \"${(P)i}\""
+		done
+	fi
+	todo+=" | grep --color=auto \"$search\""
+	eval $todo || echo "Nothing found for '$search'."
+}
 
 function scurl () {
 	if [ -z "$2" ]; then
