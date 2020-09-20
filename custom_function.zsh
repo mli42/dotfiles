@@ -48,3 +48,17 @@ function nodstore () {
 	if [ -z "$2" ]; then 2="f"; fi
 	eval find . -type $2 -name '$1' -delete -print
 }
+
+function notif () {
+	osascript -e "display notification \"$2\" with title \"$1\""
+}
+
+function wifi () {
+	if [ "$1" != "on" ] && [ "$1" != "off" ]; then
+		echo "wifi bad use: {on/off} [en.]"
+		return 1;
+	fi
+	if [ -z "$2" ]; then 2="en1"; fi
+	networksetup -setairportpower $2 $1
+	[ $? -eq 0 ] && notif "Wifi" "Turned $1"
+}
