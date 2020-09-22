@@ -6,12 +6,12 @@
 #    By: mli <mli@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/09 17:45:28 by mli               #+#    #+#              #
-#    Updated: 2020/08/21 14:47:07 by mli              ###   ########.fr        #
+#    Updated: 2020/09/22 15:42:53 by mli              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 function install_42toolbox () {
-	git clone https://github.com/alexandregv/42toolbox.git ~/
+	(cd ~ && git clone https://github.com/alexandregv/42toolbox.git)
 }
 
 function install_valgrind () {
