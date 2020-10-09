@@ -19,7 +19,7 @@ alias valgrind="ft_valgrind"
 function lfor () {
 	argc=$#
 	search=""
-	vflag="--lfor=v"
+	vflag="-v"
 
 	for ((i=1; i <= argc; i++)); do
 		if [ "${(P)i}" = "$vflag" ]; then break ; fi
