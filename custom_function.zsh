@@ -45,7 +45,7 @@ function scurl () {
 }
 
 function gpp () {
-	clang++ -Wall -Wextra -Werror $*
+	clang++ -Wall -Wextra -Werror -std=c++98 $*
 }
 
 function decorateandplay () {
