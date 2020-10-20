@@ -19,6 +19,7 @@ gogo[minishell]="charmstr"
 gogo[services]="ft_services"
 gogo[cpp]="cpp-piscine"
 gogo[philo]="philosophers"
+gogo[containers]="ft_containers"
 
 for key in ${(k)gogo}; do
 	eval "alias gogo_$key=\"cd $projectsdir/$gogo[$key]\""
