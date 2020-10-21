@@ -19,6 +19,7 @@ gogo[minishell]="charmstr"
 gogo[services]="ft_services"
 gogo[cpp]="cpp-piscine"
 gogo[philo]="philosophers"
+gogo[kscrap]="kscrap"
 gogo[containers]="ft_containers"
 
 for key in ${(k)gogo}; do

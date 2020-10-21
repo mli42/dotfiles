@@ -81,3 +81,11 @@ function wifi () {
 	networksetup -setairportpower $2 $1
 	[ $? -eq 0 ] && notif "Wifi" "Turned $1"
 }
+
+function fclose () {
+	if [ -z "$1" ]; then 1="Finder"; fi
+	if [ -z "$2" ]; then 2="1"; fi
+	AppToClose="$1"
+	NbOfWindow="$2"
+	osascript -e "tell application \"$AppToClose\" to close window $NbOfWindow"
+}

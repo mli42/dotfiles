@@ -150,3 +150,6 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" coc.nvim requires at least Vim 8.0.1453 or Neovim 0.3.2, but you're using an older version.
+let g:coc_disable_startup_warning = 1
