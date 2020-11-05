@@ -128,9 +128,7 @@ let g:syntastic_c_include_dirs = ['includes', 'libft/includes', '../includes', '
 "-------------------------------- COC ------------------------------------------
 " Install nodejs >= 10.12: https://nodejs.org/en/download/
 " Then :CocInstall coc-json coc-tsserver
-if $at42
-	source ${MY_CONFIG}/coc.vim
-endif
+source ${MY_CONFIG}/coc.vim
 "-------------------------------- YCM ------------------------------------------
 let g:ycm_error_symbol = '✖'
 let g:ycm_warning_symbol = '!'
