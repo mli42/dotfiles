@@ -62,47 +62,49 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-if !$at42
-	Plug 'ycm-core/YouCompleteMe' " Compatibility issues with syntastic
-else
-	Plug 'neoclide/coc.nvim', {'branch': 'release'} " Use release branch
-endif
+" Plug 'ycm-core/YouCompleteMe' " Compatibility issues with syntastic
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Use release branch
 
 Plug 'vim-syntastic/syntastic'
+
+" Used
+
+" Plug 'scrooloose/nerdtree'
+" Plug 'ryanoasis/vim-devicons' " Dev Icons for NerdTree
+" Plug 'ekalinin/Dockerfile.vim' " Dockerfile syntax
+" Plug 'scrooloose/nerdcommenter'
+" Plug 'mbbill/undotree'
+" Plug 'junegunn/vim-easy-align'
+" Plug 'easymotion/vim-easymotion'
+
+" Used - end
+
+Plug 'itchyny/lightline.vim' " Light footer
+Plug 'sheerun/vim-polyglot' " Syntax highlight
+Plug 'terryma/vim-multiple-cursors' " Ctrl+{n/x/...}
+Plug 'drewtempelmeyer/palenight.vim' " Theme
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'pbondoer/vim-42header'
+
 " Plug 'davidhalter/jedi-vim' " Python Autocompletion
-Plug 'scrooloose/nerdtree'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'ryanoasis/vim-devicons'
 " Plug 'Lenovsky/nuake' " Open a Terminal
-" Plug 'pandark/42header.vim'
-Plug 'ekalinin/Dockerfile.vim'
-Plug 'itchyny/lightline.vim'
 " Plug 'brookhong/cscope.vim' " IDK
-Plug 'sheerun/vim-polyglot'
-Plug 'scrooloose/nerdcommenter'
-Plug 'mbbill/undotree'
-Plug 'terryma/vim-multiple-cursors'
 " Plug 'thaerkh/vim-workspace'
-Plug 'drewtempelmeyer/palenight.vim'
 " Plug 'arcticicestudio/nord-vim'
 " Plug 'mattn/emmet-vim'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'elixir-editors/vim-elixir'
-Plug 'mhinz/vim-mix-format'
-Plug 'edkolev/tmuxline.vim'
+" Plug 'christoomey/vim-tmux-navigator'
+" Plug 'elixir-editors/vim-elixir'
+" Plug 'mhinz/vim-mix-format'
+" Plug 'edkolev/tmuxline.vim'
 " Plug 'rbgrouleff/bclose.vim'
 " Plug 'francoiscabrol/ranger.vim'
-Plug 'junegunn/vim-easy-align'
-Plug 'jparise/vim-graphql'
+" Plug 'jparise/vim-graphql'
 " Plug 'mxw/vim-jsx'
 " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Plug 'ctrlpvim/ctrlp.vim'
-Plug 'rizzatti/dash.vim'
-Plug 'easymotion/vim-easymotion'
-Plug 'vim-scripts/Align'
-Plug 'kien/rainbow_parentheses.vim'
-
-Plug 'pbondoer/vim-42header'
+" Plug 'rizzatti/dash.vim'
+" Plug 'vim-scripts/Align'
 
 call plug#end()
 
