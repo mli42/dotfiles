@@ -21,6 +21,7 @@ gogo[cpp]="cpp-piscine"
 gogo[philo]="philosophers"
 gogo[kscrap]="kscrap"
 gogo[containers]="ft_containers"
+gogo[codinGame]="codinGame"
 
 for key in ${(k)gogo}; do
 	eval "alias gogo_$key=\"cd $projectsdir/$gogo[$key]\""

@@ -47,3 +47,6 @@ source ${MY_BIN}/install_things.sh
 source ${DOTFILES}/custom_function.zsh
 source ${MY_CONFIG}/alias_gadget.zsh
 source ${MY_CONFIG}/misswritten.zsh
+
+# VSC autopep pycodestyle
+export PATH=$PATH:/Users/mli/Library/Python/3.7/bin
