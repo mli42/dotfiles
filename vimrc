@@ -69,7 +69,6 @@ Plug 'vim-syntastic/syntastic'
 
 " Used
 
-" Plug 'scrooloose/nerdtree'
 " Plug 'ryanoasis/vim-devicons' " Dev Icons for NerdTree
 " Plug 'ekalinin/Dockerfile.vim' " Dockerfile syntax
 " Plug 'scrooloose/nerdcommenter'
@@ -79,6 +78,7 @@ Plug 'vim-syntastic/syntastic'
 
 " Used - end
 
+Plug 'scrooloose/nerdtree'
 Plug 'itchyny/lightline.vim' " Light footer
 Plug 'sheerun/vim-polyglot' " Syntax highlight
 Plug 'terryma/vim-multiple-cursors' " Ctrl+{n/x/...}
