@@ -89,3 +89,10 @@ function fclose () {
 	NbOfWindow="$2"
 	osascript -e "tell application \"$AppToClose\" to close window $NbOfWindow"
 }
+
+function rpath () {
+	for spath in "$@"; do
+		path=( "${(@)path:#$spath}" )
+	done
+	echo "$PATH"
+}
