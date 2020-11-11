@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
@@ -6,11 +7,21 @@
 #    By: mli <mli@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/09 15:48:17 by mli               #+#    #+#              #
-#    Updated: 2020/06/11 21:15:50 by mli              ###   ########.fr        #
+#    Updated: 2020/11/11 12:47:08 by mli              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-echo "source ~/dotfiles/zshrc" >> ~/.zshrc;
-echo "source ~/dotfiles/bashrc" >> ~/.bashrc;
-echo "source ~/dotfiles/vimrc" >> ~/.vimrc;
-ln -s ~/dotfiles/valgrindrc ~/.valgrindrc;
+function source_rc () {
+	for rcfile in $@; do
+		echo "source ${DOTFILES}/$rcfile" >> ~/.$rcfile
+	done
+}
+
+function lnrc () {
+	for rcfile in $@; do
+		ln -s ${DOTFILES}/$rcfile ~/.$rcfile
+	done
+}
+
+source_rc zshrc bashrc vimrc
+lnrc valgrindrc pylintrc
