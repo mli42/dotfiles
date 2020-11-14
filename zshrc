@@ -18,10 +18,8 @@ alias vi="vim"
 alias srcs="source ~/.zshrc"
 alias state="git status"
 alias gstt="git status"
-unalias gst
 alias gst="git stash"
-alias gitpush="git push && git push GH"
-alias gitpush_home="git push && git push GL"
+alias py="python"
 
 export at42=0
 if [ -d /sgoinfre ]; then
