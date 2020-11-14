@@ -233,6 +233,12 @@ nnoremap <leader><Up> :call SpUp()<CR>
 nnoremap <leader><Down> :call SpDown()<CR>
 
 let file_extension=expand('%:e')
+
+let cfamily_file=0
+if (file_extension == 'c') || (file_extension == 'h') || (file_extension == 'cpp') || (file_extension == 'hpp')
+	let cfamily_file=1
+endif
+
 if (file_extension == 'c')
 	iabbrev inc" #include " .h"<ESC>3hc
 	iabbrev inc< #include < .h><ESC>3hc
