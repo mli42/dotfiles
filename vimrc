@@ -226,7 +226,6 @@ function! SpDown()
 	exec "sp"
 endfunction
 
-iabbrev mainc int		main(int argc, char **argv)<CR>{<CR>(void)argc; (void)argv;<CR>}<ESC>O
 nnoremap <leader><Right> :call VsRight()<CR>
 nnoremap <leader><Left> :call VsLeft()<CR>
 nnoremap <leader><Up> :call SpUp()<CR>
@@ -239,18 +238,21 @@ if (file_extension == 'c') || (file_extension == 'h') || (file_extension == 'cpp
 	let cfamily_file=1
 endif
 
-if (file_extension == 'c')
-	iabbrev inc" #include " .h"<ESC>3hc
-	iabbrev inc< #include < .h><ESC>3hc
-elseif (file_extension == 'h')
-	iabbrev inc" # include " .h"<ESC>3hc
-	iabbrev inc< # include < .h><ESC>3hc
-elseif (file_extension == 'cpp')
-	iabbrev inc" #include " .hpp"<ESC>5hc
-	iabbrev inc< #include < ><ESC>1hc
-elseif (file_extension == 'hpp')
-	iabbrev inc" # include " .hpp"<ESC>5hc
-	iabbrev inc< # include < ><ESC>1hc
-endif
+if (cfamily_file == 1)
+	iabbrev def# # define
+	iabbrev mainc int<TAB><TAB>main(int argc, char **argv)<CR>{<CR>(void)argc; (void)argv;<CR>}<ESC>O
 
-iabbrev def# # define
+	if (file_extension == 'c')
+		iabbrev inc" #include " .h"<ESC>3hc
+		iabbrev inc< #include < .h><ESC>3hc
+	elseif (file_extension == 'h')
+		iabbrev inc" # include " .h"<ESC>3hc
+		iabbrev inc< # include < .h><ESC>3hc
+	elseif (file_extension == 'cpp')
+		iabbrev inc" #include " .hpp"<ESC>5hc
+		iabbrev inc< #include < ><ESC>1hc
+	elseif (file_extension == 'hpp')
+		iabbrev inc" # include " .hpp"<ESC>5hc
+		iabbrev inc< # include < ><ESC>1hc
+	endif
+endif
