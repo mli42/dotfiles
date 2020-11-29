@@ -259,7 +259,10 @@ endif
 
 if (file_extension == 'py')
 	set backspace=indent,eol,start
-	set expandtab " enter spaces when TAB is pressed
-	" Use Tabs to indent config:
-	"autocmd FileType python set tabstop=4 shiftwidth=4 noexpandtab
+	function! NewPythonFileIndent()
+		set tabstop=4 shiftwidth=4 expandtab
+	endfunction
+	nnoremap <leader>n :call NewPythonFileIndent()<CR>
+	"call NewPythonFileIndent() " Useless bc?
+	"set noexpandtab to use Tabs to indent
 endif
