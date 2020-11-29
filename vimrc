@@ -256,3 +256,10 @@ if (cfamily_file == 1)
 		iabbrev inc< # include < ><ESC>1hc
 	endif
 endif
+
+if (file_extension == 'py')
+	set backspace=indent,eol,start
+	set expandtab " enter spaces when TAB is pressed
+	" Use Tabs to indent config:
+	"autocmd FileType python set tabstop=4 shiftwidth=4 noexpandtab
+endif
