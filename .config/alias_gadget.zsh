@@ -33,4 +33,8 @@ alias thp="cd $projectsdir/THP"
 alias doruby="cd $projectsdir/THP_rendu"
 alias dobot="cd $projectsdir/MeandreBot"
 
-# gogo_projects
+going=""
+if [ -n "$going" ]; then
+	eval gogo_$going
+fi
+unset going
