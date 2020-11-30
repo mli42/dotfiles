@@ -4,6 +4,7 @@ export MAIL="mli@student.42.fr"
 export DOTFILES=${HOME}/dotfiles
 export MY_CONFIG=${DOTFILES}/.config
 export MY_BIN=${DOTFILES}/my_bin
+export SUBVIM=${DOTFILES}/.vim_config
 
 alias gccw="gcc -Wall -Werror -Wextra"
 alias gccwsa="gcc -Wall -Werror -Wextra -fsanitize=address -g3"
@@ -11,6 +12,7 @@ alias gccwsa="gcc -Wall -Werror -Wextra -fsanitize=address -g3"
 alias mzsh="vim ${DOTFILES}/zshrc"
 alias mzsh2="vim ${MY_CONFIG}/alias_gadget.zsh"
 alias mvim="vim ${DOTFILES}/vimrc"
+alias mvim_sub="vim ${SUBVIM}"
 alias mdot="cd ${DOTFILES}"
 alias mbin="cd ${MY_BIN}"
 
