@@ -69,6 +69,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_c_include_dirs = ['includes', 'libft/includes', '../includes', '../libft/includes', './libft', '../']
+" https://pycodestyle.pycqa.org/en/latest/intro.html#error-codes
+" let g:syntastic_mode_map = { 'passive_filetypes': ['python'] } " Disable for python
+let g:syntastic_python_checkers=["flake8 --ignore=E225,E501,E302,E261,E262,E701,E241,E126,E127,E128,W801", "python3"]
 
 "-------------------------------- COC ------------------------------------------
 " Install nodejs >= 10.12: https://nodejs.org/en/download/
