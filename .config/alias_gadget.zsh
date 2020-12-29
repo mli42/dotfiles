@@ -34,7 +34,7 @@ alias doruby="cd $projectsdir/THP_rendu"
 alias dobot="cd $projectsdir/MeandreBot"
 
 going=""
-if [ -n "$going" ]; then
+if [ -n "$going" ] && ! env | grep "VSCODE" &>/dev/null; then
 	eval gogo_$going
 fi
 unset going
