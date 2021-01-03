@@ -68,6 +68,15 @@ function nodstore () {
 	eval find . -type $2 -name '$1' -delete -print
 }
 
+function dnodstore () {
+	if [ -z "$1" ]; then 1="__pycache__"; fi
+	PYCACHES=($(nodstore $1 d))
+	for file in ${PYCACHES[@]}; do
+		echo $file
+	done
+	rm -rf $PYCACHES
+}
+
 function notif () {
 	osascript -e "display notification \"$2\" with title \"$1\""
 }
