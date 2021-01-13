@@ -69,6 +69,8 @@ nnoremap <leader><Left> :call VsLeft()<CR>
 nnoremap <leader><Up> :call SpUp()<CR>
 nnoremap <leader><Down> :call SpDown()<CR>
 
+set noexpandtab
+
 if cfamily_file == 1
 	source ${SUBVIM}/c.vim
 elseif cf_ext == 'py'
