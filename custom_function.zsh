@@ -112,3 +112,10 @@ function resetVSC () {
 	rm -rf "$HOME/Library/Caches/com.microsoft.VSCode"
 	rm -rf "$HOME/Library/Saved Application State/com.microsoft.VSCode.savedState"
 }
+
+function iterall () {
+	FILES=($(ls))
+	for file in ${FILES[@]}; do
+		eval "$*"
+	done
+}
