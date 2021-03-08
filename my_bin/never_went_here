@@ -11,6 +11,10 @@
 #                                                                              #
 # **************************************************************************** #
 
+if [ -z "$DOTFILES" ]; then
+	DOTFILES=$(pwd | rev | cut -d '/' -f 2- | rev);
+fi
+
 function source_rc () {
 	for rcfile in $@; do
 		echo "source ${DOTFILES}/$rcfile" >> ~/.$rcfile
