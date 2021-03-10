@@ -24,6 +24,7 @@ gogo[containers]="ft_containers"
 gogo[codinGame]="codinGame"
 gogo[ghsite]="ghsite"
 gogo[resume]="resume"
+gogo[webserv]="webserv"
 
 for key in ${(k)gogo}; do
 	eval "alias gogo_$key=\"cd $projectsdir/$gogo[$key]\""
