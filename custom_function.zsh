@@ -119,3 +119,7 @@ function iterall () {
 		eval "$*"
 	done
 }
+
+function sed_iterall () {
+	iterall sed -i \"\" s/\"$1\"/\"$2\"/g \$file
+}
