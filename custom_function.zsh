@@ -57,6 +57,12 @@ function seeplace () {
 	decorateandplay "du -hd1 2>/dev/null ~ | sort -h"
 }
 
+function makeplace () {
+	rm -r ~/Library/Caches/*; rm ~/.zcompdump*;
+	rm -rf ~/Library/**.42_cache_bak*;
+	brew cleanup
+}
+
 function gundo () {
 	if [ -z "$1" ]; then 1="."; fi
 	git checkout -- $*
