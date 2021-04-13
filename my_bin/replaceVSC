@@ -1,0 +1,16 @@
+#!/usr/bin/env zsh
+
+FILE="/Applications/VSCodium.app/Contents/Resources/app/product.json"
+
+function replace () {
+	if [ -z "$1" ] || [ -z "$2" ]; then
+		echo "Need 2 args" && exit 1
+	fi
+	eval "sed -i '' s/'$1'/'$2'/g $FILE"
+}
+
+replace '\"serviceUrl\": \"https:\/\/open-vsx.org\/vscode\/gallery\"' \
+	'\"serviceUrl\": \"https:\/\/marketplace.visualstudio.com\/_apis\/public\/gallery\",\
+    \"cacheUrl\": \"https:\/\/vscode.blob.core.windows.net\/gallery\/index\"'
+
+replace 'https:\/\/open-vsx.org\/vscode\/item' 'https:\/\/marketplace.visualstudio.com\/items'
