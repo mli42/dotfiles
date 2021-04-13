@@ -113,10 +113,12 @@ function rpath () {
 }
 
 function resetVSC () {
-	rm -rf "$HOME/.vscode"
-	rm -rf "$HOME/Library/Application Support/Code"
+	rm -rf "$HOME/"{.vscode,.vscode-oss}
+	rm -rf "$HOME/Library/Application Support/"{Code,VSCodium}
 	rm -rf "$HOME/Library/Caches/com.microsoft.VSCode"
+	rm -rf "$HOME/Library/Caches/"{com.visualstudio.code.oss,com.visualstudio.code.oss.ShipIt}
 	rm -rf "$HOME/Library/Saved Application State/com.microsoft.VSCode.savedState"
+	rm -rf "$HOME/Library/Saved Application State/com.visualstudio.code.oss.savedState"
 }
 
 function iterall () {
