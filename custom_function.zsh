@@ -131,3 +131,8 @@ function iterall () {
 function sed_iterall () {
 	iterall sed -i \"\" s/\"$1\"/\"$2\"/g \$file
 }
+
+function ft_exit () {
+	>&2 echo $*
+	exit 1
+}

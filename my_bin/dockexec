@@ -1,0 +1,24 @@
+#!/usr/bin/env zsh
+
+if [ $# -eq 0 ]; then
+	>&2 echo "Usage: $0 [img-name] [container-name] [bin-to-exec]" \
+		"\nGive '-' to use default parameter"
+	return 1
+fi
+
+if [ -z "$1" ] || [ "$1" = "-" ]; then
+	1="img-tmp"
+fi
+
+if [ -z "$2" ] || [ "$2" = "-" ]; then
+	2="cont-name-tmp"
+fi
+
+if [ -z "$3" ] || [ "$3" = "-" ]; then
+	3="sh"
+fi
+
+docker build -t "$1" . && \
+docker run -it -d --rm --name "$2" "$1" && \
+docker exec -it "$2" "$3" && \
+docker kill "$2"
