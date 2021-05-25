@@ -33,7 +33,7 @@ fi
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export BREW_PATH=${GOINFRE}/.brew/bin
-#export MINICONDA_PATH=${GOINFRE}/miniconda3/bin
+export MINICONDA_PATH=${GOINFRE}/miniconda3/bin
 #export RVM_PATH=$GOINFRE/.rvm/bin
 
 export PATH=/usr/local/bin:${BREW_PATH}:${MINICONDA_PATH}:${PATH}:${RVM_PATH}:${MY_BIN}
@@ -50,3 +50,4 @@ source ${MY_CONFIG}/misswritten.zsh
 
 # VSC autopep pycodestyle
 export PATH=$PATH:/Users/mli/Library/Python/3.7/bin
+export PATH=$PATH:~/.cargo/bin
