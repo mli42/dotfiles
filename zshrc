@@ -41,7 +41,6 @@ export PATH=/usr/local/bin:${BREW_PATH}:${MINICONDA_PATH}:${PATH}:${RVM_PATH}:${
 export PS1="🐈 ${PS1}"
 export PS2="🤡 ${PS2}"
 
-source ~/42toolbox/shell_utils.sh
 source ${MY_BIN}/install_things.sh
 
 source ${DOTFILES}/custom_function.zsh
@@ -49,5 +48,5 @@ source ${MY_CONFIG}/alias_gadget.zsh
 source ${MY_CONFIG}/misswritten.zsh
 
 # VSC autopep pycodestyle
-export PATH=$PATH:/Users/mli/Library/Python/3.7/bin
+export PATH=$PATH:~/Library/Python/3.7/bin
 export PATH=$PATH:~/.cargo/bin
