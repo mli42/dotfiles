@@ -23,6 +23,15 @@ alias gstt="git status"
 alias gst="git stash"
 alias py="python"
 
+EOC=$'\033[0m'
+BOLD=$'\033[1m'
+RED=$'\033[91m'
+CYAN=$'\033[96m'
+GREEN=$'\033[92m'
+DBLUE=$'\033[94m'
+PURPLE=$'\033[95m'
+YELLOW=$'\033[93m'
+
 export at42=0
 if [ -d /sgoinfre ]; then
 	at42=1
