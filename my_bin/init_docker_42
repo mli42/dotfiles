@@ -24,7 +24,7 @@ docker_destination="/goinfre/$USER/docker" #=> Select docker destination (goinfr
 ################################################################################
 
 # Colors
-blue=$'\033[0;34m'
+blue=$'\033[1;94m'
 cyan=$'\033[1;96m'
 reset=$'\033[0;39m'
 
