@@ -1,0 +1,28 @@
+#!/usr/bin/env zsh
+
+if [ $# -lt 1 ] || [ $# -gt 2 ] ; then
+	echo "Usage: $(basename $0) dockname [path=\$LOCALDOCKER]"
+	exit 1
+fi
+
+dockname="$1"
+dockpath="$LOCALDOCKER"
+if ! [ -z "$2" ]; then dockpath="$2"; fi
+
+img_name=${dockname}_img
+dockerfile_name=${dockpath}/${dockname}.dockerfile
+
+# Building
+docker build -f ${dockerfile_name} -t ${img_name} .
+
+docker ps | grep ${img_name} &>/dev/null
+is_running=$?
+
+# Running ?
+if [ $is_running -ne 0 ]; then
+	run_cmd="docker run -it -d --rm --name ${dockname} ${img_name}"
+	echo -n "$run_cmd [y/n] ?: "; read -k choice; echo -n "\n"
+	if [ "$choice" = "y" ]; then
+		eval $run_cmd
+	fi
+fi

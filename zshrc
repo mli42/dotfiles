@@ -5,6 +5,7 @@ export DOTFILES=${HOME}/dotfiles
 export MY_CONFIG=${DOTFILES}/.config
 export MY_BIN=${DOTFILES}/my_bin
 export SUBVIM=${DOTFILES}/.vim_config
+export LOCALDOCKER=${DOTFILES}/dockerfiles
 
 alias gccw="gcc -Wall -Werror -Wextra"
 alias gccwsa="gcc -Wall -Werror -Wextra -fsanitize=address -g3"
