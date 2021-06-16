@@ -20,9 +20,15 @@ is_running=$?
 
 # Running ?
 if [ $is_running -ne 0 ]; then
-	run_cmd="docker run -it -d --rm --name ${dockname} ${img_name}"
-	echo -n "$run_cmd [y/n] ?: "; read -k choice; echo -n "\n"
-	if [ "$choice" = "y" ]; then
-		eval $run_cmd
+	run_flags="-it -d --rm --name ${dockname}"
+	run_cmd="docker run \${run_flags} ${img_name}"
+	eval "echo -n \"$run_cmd [y/n/a] ?: \""; read -k choice; echo -n "\n"
+
+	if [ "$choice" = "a" ]; then
+		echo -n "Add flags: "; read additional_flags;
+		run_flags+=" $additional_flags"
+	fi
+	if [ "$choice" = "y" ] || [ "$choice" = "a" ] ; then
+		eval eval $run_cmd
 	fi
 fi
