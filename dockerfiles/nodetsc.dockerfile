@@ -1,4 +1,4 @@
-FROM ubuntoo
+FROM ubuntoo_img
 
 RUN curl -sL https://deb.nodesource.com/setup_current.x | bash - && \
     apt-get install -y nodejs
