@@ -30,7 +30,7 @@ if cf_ext == 'c' || cf_ext == 'h' || cf_ext == 'cpp' || cf_ext == 'hpp'
 endif
 
 " Vim Plug
-source $SUBVIM/vimplug.vim
+source $MY_SUBVIM/vimplug.vim
 
 set showmatch showcmd ruler
 
@@ -72,7 +72,7 @@ nnoremap <leader><Down> :call SpDown()<CR>
 " set noexpandtab
 
 if cfamily_file == 1
-	source ${SUBVIM}/c.vim
+	source ${MY_SUBVIM}/c.vim
 elseif cf_ext == 'py'
-	source ${SUBVIM}/py.vim
+	source ${MY_SUBVIM}/py.vim
 endif

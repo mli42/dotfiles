@@ -15,7 +15,7 @@ Plug 'vim-syntastic/syntastic'
 " Used
 
 " Plug 'ryanoasis/vim-devicons' " Dev Icons for NerdTree
-" Plug 'ekalinin/Dockerfile.vim' " Dockerfile syntax
+Plug 'ekalinin/Dockerfile.vim' " Dockerfile syntax
 " Plug 'scrooloose/nerdcommenter'
 " Plug 'mbbill/undotree'
 " Plug 'junegunn/vim-easy-align'
@@ -83,9 +83,9 @@ let g:ycm_warning_symbol = '!'
 let g:ycm_autoclose_preview_window_after_completion = 1
 
 if (cf_ext == "c" || cf_ext == "h")
-	let g:ycm_global_ycm_extra_conf = '~/dotfiles/.config/.ycm_c.py'
+	let g:ycm_global_ycm_extra_conf = $MY_SUBVIM/'ycm_c.py'
 elseif (cf_ext == "cpp" || cf_ext == "hpp")
-	let g:ycm_global_ycm_extra_conf = '~/dotfiles/.config/.ycm_cpp.py'
+	let g:ycm_global_ycm_extra_conf = $MY_SUBVIM/'ycm_cpp.py'
 endif
 
 "-------------------------------- NerdTreeToggle--------------------------------
